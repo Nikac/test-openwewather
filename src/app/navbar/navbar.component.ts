@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+import { Weather } from '../models/weather.model';
+
 
 @Component({
   selector: 'navbar',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  public emptyInput: string = '';
+  weatherCity: Weather;
+  cities: string[] = [];
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  onEnter(city: string) {
+    this.cities = city.split(', ');
+    // console.log(this.cities);
+    this.emptyInput = '';
+  }
 }
+

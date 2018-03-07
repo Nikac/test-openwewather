@@ -1,3 +1,9 @@
-<p>
-  navbar works!
-</p>
+<div class="navbar">
+	<input 
+		type="text" 
+		placeholder="Enter City" 
+		class="city-input"
+		#c
+		(keyup.enter)="onEnter(c.value)" 
+		[(ngModel)]="emptyInput">
+</div>
