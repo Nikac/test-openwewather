@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { WeatherComponent } from './weather/weather.component';
+import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    WeatherComponent,
+    WeatherCityComponent
   ],
   imports: [
     BrowserModule
