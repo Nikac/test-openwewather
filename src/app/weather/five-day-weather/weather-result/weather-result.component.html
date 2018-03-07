@@ -50,6 +50,8 @@
 </div>
 <div>
 	<h4 *ngIf="!weatherDetailCity"> Go Back and Choose city</h4>
-	
+	<agm-map *ngIf="weatherDetailCity" [latitude]="lat" [longitude]="lon">
+	  <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+	</agm-map>
 </div>
 
