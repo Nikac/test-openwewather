@@ -42,7 +42,7 @@ export class OpenweatherService {
             };
           this.cities.push(this.weatherCity);
        });
-  	
+    
     return this.http.get(url, {params: params})
   }
 
@@ -54,18 +54,24 @@ export class OpenweatherService {
       .append('units', this.units)
       .append('q', city);
 
-  	return this.http.get(url, {params: params});
+    return this.http.get(url, {params: params});
   }
 
 
   onChangeInput(weather: Weather) {
-  	this.newCity.next(weather);
+    this.newCity.next(weather);
   }
 
   onChangeInputWeatherDetail(weatherDeatil: WeatherDetail) {
-  	this.newFiveDayWeather.next(weatherDeatil);
+    this.newFiveDayWeather.next(weatherDeatil);
   }
 
+  setLat(lat: number) {
+    this.newLat.next(lat);
+  }
 
+  setLon(lon: number) {
+    this.newLon.next(lon);
+  }
 
 }
