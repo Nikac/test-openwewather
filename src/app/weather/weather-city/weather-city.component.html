@@ -1,3 +1,16 @@
-<p>
-  weather-city works!
-</p>
+<div class="card" *ngIf="currentCityWeather">
+	<div class="row">
+		<div class="col-4">
+			<h5 class="card-title">{{ currentCityWeather.name }}</h5>
+			<p class="card-text">{{ currentCityWeather.date | date:'MMM d' }}th</p>
+		</div>
+		<div class="col-4">
+			<h2 class="card-title">{{ currentCityWeather.temp }}&#x2103;</h2>
+			<p class="card-text">{{ currentCityWeather.description }}</p>
+		</div>
+		<div class="col-4">
+			<p class="card-text">Humidity: {{ currentCityWeather.humidity }} %</p>
+			<p class="card-text">Wind:  {{ currentCityWeather.wind }} km/h</p>
+		</div>
+	</div>
+</div>
