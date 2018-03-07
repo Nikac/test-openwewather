@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
@@ -12,7 +12,7 @@ import { WeatherCityComponent } from './weather/weather-city/weather-city.compon
 import { FiveDayWeatherComponent } from './weather/five-day-weather/five-day-weather.component';
 import { OpenweatherService } from './services/openweather.service';
 import { WeatherResultComponent } from './weather/five-day-weather/weather-result/weather-result.component';
-
+import { MyHttpInterceptor } from './services/my-http-interceptor';
 
 const appRoutes: Routes = [
   { path: '' , component: WeatherComponent },
@@ -40,7 +40,12 @@ const appRoutes: Routes = [
     })
   ],
   providers: [
-    OpenweatherService
+    OpenweatherService,
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: MyHttpInterceptor,
+        multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
