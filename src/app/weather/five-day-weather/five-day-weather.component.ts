@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
+import { Router } from '@angular/router';
+import { OpenweatherService } from '../../services/openweather.service';
+import { WeatherDetail } from '../../models/weather-detail.model';
 
 @Component({
   selector: 'five-day-weather',
@@ -6,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./five-day-weather.component.scss']
 })
 export class FiveDayWeatherComponent implements OnInit {
+  weatherDetailCity: WeatherDetail;
+  cities: string[] = [];
 
-  constructor() { }
+  constructor(private router: Router, private owService: OpenweatherService) { }
 
   ngOnInit() {
+  	this.owService.newFiveDayWeather
+      .subscribe( data => {
+        this.weatherDetailCity = data;
+      });
   }
 
+  onBack() {
+  	this.router.navigate(['/']);
+  }
 }
