@@ -3,11 +3,15 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 
 import { Weather } from '../models/weather.model';
+import { WeatherDetail } from '../models/weather-detail.model';
 
 @Injectable()
 export class OpenweatherService {
 
   public newCity = new Subject<Weather>();
+  public newFiveDayWeather = new Subject<WeatherDetail>();
+  public newLat = new Subject<number>();
+  public newLon = new Subject<number>();
   public cities: Weather[]= [];
   public weatherCity: Weather;
   public num: number = 0;
@@ -42,11 +46,26 @@ export class OpenweatherService {
     return this.http.get(url, {params: params})
   }
 
+  fiveDayWeather(city: string) {
+    const url = 'http://api.openweathermap.org/data/2.5/forecast';
+    const q = city;
+    const params = new HttpParams()
+      .append('appid', this.apiId)
+      .append('units', this.units)
+      .append('q', city);
+
+  	return this.http.get(url, {params: params});
+  }
 
 
   onChangeInput(weather: Weather) {
   	this.newCity.next(weather);
   }
+
+  onChangeInputWeatherDetail(weatherDeatil: WeatherDetail) {
+  	this.newFiveDayWeather.next(weatherDeatil);
+  }
+
 
 
 }
