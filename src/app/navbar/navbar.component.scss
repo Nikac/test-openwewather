@@ -1,0 +1,31 @@
+@import '~scss/vars';
+
+.navbar {
+  background-color: $navbarColor;
+  padding-top: 10px;
+	width: 100%;
+	height: 60px;
+
+  .city-input {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    background-color: $inputElementColor;
+    padding: 10px;
+    width: 40%;
+    font-size: 14px;
+    color: white;
+    @media screen and (max-width: $break-medium) {
+      width: 60%; 
+    }
+    @media screen and (max-width: $break-small) {
+      width: 90%;
+    }
+  }
+  .city-input:focus {
+    outline: none;
+  }
+
+}
+
+
