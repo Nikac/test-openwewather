@@ -15,6 +15,9 @@ export class WeatherComponent implements OnInit {
   citiesWeather: Weather[] = [];
   cityName: string;
   weatherDetail: WeatherDetail;
+  lat: number;
+  lon: number;
+  latLon: number[] = [];
 
   constructor(private owService: OpenweatherService, private router: Router) { }
 
@@ -28,6 +31,9 @@ export class WeatherComponent implements OnInit {
 
      this.owService.fiveDayWeather(this.cityName)
        .subscribe((data: any) => {
+         console.log(data);
+         this.lat = data.city.coord.lat;
+         this.lon = data.city.coord.lon;
 
          this.weatherDetail = {
            city: data.city.name,
@@ -69,7 +75,8 @@ export class WeatherComponent implements OnInit {
            }
          };
          this.owService.onChangeInputWeatherDetail(this.weatherDetail);
-
+         this.owService.setLat(this.lat);
+         this.owService.setLon(this.lon);
        });
     });
   }
