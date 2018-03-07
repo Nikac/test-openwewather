@@ -1,0 +1,86 @@
+@import '~scss/vars';
+
+.card {
+	padding: 20px 0 50px 0;
+
+	.day {
+		margin-top: 30px;
+		border-right: 1px solid black;
+		@media screen and (max-width: 991px) {
+			width: 100%;
+			display: block;
+			margin: 25px 0 25px 0;
+			border: 0px;
+
+			h1 {
+				font-size: 2rem;
+			}
+			h2 {
+				font-size: 1.8rem;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media screen and (max-width: $break-medium) {
+			h1 {
+				font-size: 1.4rem;
+			}
+			h2 {
+				font-size: 1.2rem;
+			}
+
+			h3 {
+				font-size: 1rem;
+			}
+
+			h5 {
+				font-size: 0.9rem;
+			}
+
+			p {
+				font-size: 0.8rem;
+				line-height: 0.8;
+			}
+		}
+
+		@media screen and (max-width: $break-small) {
+			h1 {
+				font-size: 1.4rem;
+			}
+			h2 {
+				font-size: 1.2rem;
+			}
+
+			h3 {
+				font-size: 1rem;
+			}
+
+			h5 {
+				font-size: 0.9rem;
+			}
+
+			p {
+				font-size: 0.8rem;
+				line-height: 0.8;
+			}
+		}
+	}
+
+	.day:nth-child(6) {
+		border: 0px;
+	}
+
+	.disappears{
+		@media only screen and (max-width: 991px) {
+			display: none;
+		}
+	}
+}
+
+
+
+
+
