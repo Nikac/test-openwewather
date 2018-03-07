@@ -1,0 +1,57 @@
+@import '~scss/vars';
+
+.card {
+	width: 100%;
+	min-width: 310px;
+	height: 115px;
+	margin-top: 50px;
+	background-color: white;
+	margin-right: 20px;
+	box-sizing: border-box;
+	cursor: pointer;
+	padding: 5px;
+		@media only screen and (max-width: $break-small) {
+			min-width: 275px;
+		}
+	
+	.col-4 {
+		box-sizing: border-box;
+		padding-top: 25px;
+		@media only screen and (max-width: $break-small) {
+			padding:  30px 10px 0 5px;
+		}
+		
+		h1, h2, h3,h5{
+			text-align: center;
+			color: black;
+			color: $headingsColor;
+			margin-top: 0px;
+			margin-bottom: 0;
+			font-family: $mainFont;
+			@media only screen and (max-width: $break-small) {
+				h2 {
+					font-size: 1.8rem;
+				}
+
+				h5 {
+					font-size: 1.20rem;
+				}
+			}
+		}
+
+		p {
+			color: $paragraphColor;
+			margin: 0;
+			text-align: center;
+			font-size: 12px;
+			padding: 2px 0 0 0;
+			font-family: $mainFont;
+		}
+	}
+
+	.col-4:nth-child(odd) {
+		box-sizing: border-box;
+		padding-top: 35px;
+	}
+}
+
