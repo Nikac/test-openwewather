@@ -28,9 +28,6 @@ export class WeatherComponent implements OnInit {
 
      this.owService.fiveDayWeather(this.cityName)
        .subscribe((data: any) => {
-         console.log(data);
-         this.lat = data.city.coord.lat;
-         this.lon = data.city.coord.lon;
 
          this.weatherDetail = {
            city: data.city.name,
