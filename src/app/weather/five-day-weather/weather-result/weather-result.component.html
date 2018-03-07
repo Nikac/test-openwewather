@@ -1,3 +1,55 @@
-<p>
-  weather-result works!
-</p>
+<div class="card" *ngIf="weatherDetailCity">
+	<div class="row">
+		<div class="col">
+			<h1 class="card-title text-center">Forecast for 5 days</h1>
+			<h2 class="card-title text-center">City: {{weatherDetailCity.city}}</h2>
+			<h3 class="card-title text-center">Country: {{weatherDetailCity.country}}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-1 disappears"></div>
+		<div class="col-sm-12 col-md-12 col-lg-2 day">
+			<h5 class="card-text text-center">Date: {{ weatherDetailCity.firstDay.date | date:'MMM d, y' }}</h5>
+			<p class="card-text text-center">Temp.: {{ weatherDetailCity.firstDay.temp }}&#x2103;</p>
+			<p class="card-text text-center">Min. Temp.: {{ weatherDetailCity.firstDay.minTemp }}&#x2103;</p>
+			<p class="card-text text-center">Max. Temp.: {{ weatherDetailCity.firstDay.maxTemp }}&#x2103;</p>
+			<p class="card-text text-center">Description: {{ weatherDetailCity.firstDay.description }}</p>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-2 day">
+			<h5 class="card-text text-center">Date: {{ weatherDetailCity.secondDay.date | date:'MMM d, y' }}</h5>
+			<p class="card-text text-center">Temp.: {{ weatherDetailCity.secondDay.temp }} &#x2103; </p>
+			<p class="card-text text-center">Min. Temp.: {{ weatherDetailCity.secondDay.minTemp }}&#x2103;</p>
+			<p class="card-text text-center">Max. Temp.: {{ weatherDetailCity.secondDay.maxTemp }}&#x2103;</p>
+			<p class="card-text text-center">Description: {{ weatherDetailCity.secondDay.description }}</p>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-2 day">
+			<h5 class="card-text text-center">Date: {{ weatherDetailCity.thirdDay.date | date:'MMM d, y' }}</h5>
+			<p class="card-text text-center">Temp.: {{ weatherDetailCity.thirdDay.temp }}&#x2103;</p>
+			<p class="card-text text-center">Min. Temp.: {{ weatherDetailCity.thirdDay.minTemp }}&#x2103;</p>
+			<p class="card-text text-center">Max. Temp.: {{ weatherDetailCity.thirdDay.maxTemp }}&#x2103;</p>
+			<p class="card-text text-center">Description: {{ weatherDetailCity.thirdDay.description }}</p>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-2 day">
+			<h5 class="card-text text-center">Date: {{ weatherDetailCity.fourthDay.date | date:'MMM d, y' }}</h5>
+			<p class="card-text text-center">Temp.: {{ weatherDetailCity.fourthDay.temp }}&#x2103;</p>
+			<p class="card-text text-center">Min. Temp.: {{ weatherDetailCity.fourthDay.minTemp }}&#x2103;</p>
+			<p class="card-text text-center">Max. Temp.: {{ weatherDetailCity.fourthDay.maxTemp }}&#x2103;</p>
+			<p class="card-text text-center">Description: {{ weatherDetailCity.fourthDay.description }}</p>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-2 day">
+			<h5 class="card-text text-center">Date: {{ weatherDetailCity.fifthDay.date | date:'MMM d, y' }}</h5>
+			<p class="card-text text-center">Temp.: {{ weatherDetailCity.fifthDay.temp }}&#x2103;</p>
+			<p class="card-text text-center">Min. Temp.: {{ weatherDetailCity.fifthDay.minTemp }}&#x2103;</p>
+			<p class="card-text text-center">Max. Temp.: {{ weatherDetailCity.fifthDay.maxTemp }}&#x2103;</p>
+			<p class="card-text text-center">Description: {{ weatherDetailCity.fifthDay.description }}</p>
+		</div>
+		<div class="col-1 disappears">
+
+		</div>
+	</div>
+</div>
+<div>
+	<h4 *ngIf="!weatherDetailCity"> Go Back and Choose city</h4>
+	
+</div>
+
