@@ -10,6 +10,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { WeatherCityComponent } from './weather/weather-city/weather-city.component';
 import { OpenweatherService } from './services/openweather.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
