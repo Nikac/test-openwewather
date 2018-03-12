@@ -29,7 +29,7 @@ export class OpenweatherService {
       .append('q', city);
 
      this.http.get(url, {params: params})
-       .subscribe( data => {
+       .subscribe( (data: any) => {
           this.weatherCity = {
               id: this.num++,
               name: data.name,
